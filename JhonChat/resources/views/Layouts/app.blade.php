@@ -7,6 +7,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <title>JhonChat - @yield('titulo')</title>
         <script src="{{ asset('js/app.js') }}" defer></script>
+        @vite('resources/css/app.css')
 </head>
     <body class="bg-gray-100">
         <header class="p-5 border-b bg-white shadow">
@@ -16,7 +17,7 @@
                 <nav class="flex justify-around bg-white w-60">
                     <a class="font-bold uppercase text-grey-600 text-sm" href="/">Home</a>
                     <a class="font-bold uppercase text-grey-600 text-sm" href="">Login</a>
-                    <a class="font-bold uppercase text-grey-600 text-sm" href="{{ route('register') }}">Crear Cuenta</a>
+                    <a class="font-bold uppercase text-grey-600 text-sm" href="/register">Crear Cuenta</a>
                 </nav>
             </div>
         </header>
