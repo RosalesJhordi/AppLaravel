@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Principal');
 });
-Route::get('/crear_cuenta',[RegisterController::class,'index'])->name('register');
-Route::post('/crear_cuenta',[RegisterController::class,'store']);
+Route::get('/register',[RegisterController::class,'index'])->name('register');
+Route::post('/register',[RegisterController::class,'store']);
