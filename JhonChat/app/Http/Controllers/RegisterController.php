@@ -18,19 +18,16 @@ class RegisterController extends Controller
         // dd($request); debug
         // moficar request 
 
-        $request->request->add(['username' => Str::slug($request->username)]);
         //validacion laravel
 
         $this->validate($request,[
             'name' => 'required',
-            // 'username' => 'required | unique:users|min:5|max:15',
-            // 'email' => 'required | unique:users | email',
-            'username' => 'required | min:5|max:15',
-            'email' => 'required | email',
-            'password' => 'required | confirmed | min:6'
+            'username' => 'required|unique:users|min:5|max:15',
+            'email' => 'required|unique:users|email',
+            'password' => 'required|confirmed|min:6'
         ]);
 
-        
+        $request->request->add(['username' => Str::slug($request->username)]);
         //crear registro
         User::create([
             'name' => $request ->name,

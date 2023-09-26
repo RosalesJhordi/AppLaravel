@@ -14,11 +14,23 @@
             <div class="container mx-auto flex justify-between items-center">
                 <h1 class="text-3xl font-black">JhonChat</h1>
 
-                <nav class="flex justify-around bg-white w-60">
-                    <a class="font-bold uppercase text-grey-600 text-sm" href="/">Home</a>
-                    <a class="font-bold uppercase text-grey-600 text-sm" href="">Login</a>
-                    <a class="font-bold uppercase text-grey-600 text-sm" href="/register">Crear Cuenta</a>
-                </nav>
+                {{-- verificar usuario autenticado --}}
+                @if (auth()->user())
+                    <nav class="flex justify-around bg-white w-60">
+                        <a class="font-boldtext-grey-900 text-sm" href="">Hola: {{ auth()->user()->username}}</a>
+                        <form method="POST" action="{{ route('logout')}}">
+                            @csrf
+                            <button type="submit" class="font-bold uppercase text-grey-600 text-sm">Cerrar sesion</button>
+                        </form>
+                        
+                    </nav>
+                @else
+                    <nav class="flex justify-around bg-white w-60">
+                        <a class="font-bold uppercase text-grey-600 text-sm" href="/">Home</a>
+                        <a class="font-bold uppercase text-grey-600 text-sm" href="{{ route('login')}}">Login</a>
+                        <a class="font-bold uppercase text-grey-600 text-sm" href="{{ route('register')}}">Crear Cuenta</a>
+                    </nav>
+                @endif
             </div>
         </header>
 
