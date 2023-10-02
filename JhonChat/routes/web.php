@@ -17,6 +17,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/imagen',[ImageController::class,'store'])->name('image.store');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/', function () {
     return view('Principal');
 });

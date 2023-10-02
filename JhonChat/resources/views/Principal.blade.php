@@ -1,7 +1,7 @@
 @extends('Layouts.app')
 
 @section('titulo')
-    pagina principal
+    pagina principal 03
 @endsection
 
 @section('contenido')
